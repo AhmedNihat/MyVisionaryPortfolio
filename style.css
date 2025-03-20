@@ -1,0 +1,203 @@
+body {
+    transition: background 0.5s ease;
+    font-family: 'Fira Code', monospace;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #7b044e; }
+    50% { opacity: 0.8; text-shadow: 0 0 3px #00FFFF, 0 0 8px #7b044e; }
+    100% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #7b044e; }
+}
+
+#clock {
+    animation: flicker 1.5s infinite alternate;
+}
+
+
+
+
+/* Cyberpunk Animation */
+@keyframes cyberfunkAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #FF00FF, 0 0 40px #FF00FF;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #FF00FF, 0 0 50px #FF00FF;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #FF00FF, 0 0 40px #FF00FF;
+    }
+}
+
+.animate-cyberfunk {
+    animation: cyberfunkAnimation 2s ease-in-out;
+    color: #00FFFF;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Text Pop Animation */
+@keyframes textPop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dynamic Text Animation */
+#dynamic-text {
+    animation: textPop 0.5s ease forwards;
+    display: inline-block;
+    font-size: 2.5rem;
+    color: #FF00FF;
+    font-weight: bold;
+    letter-spacing: 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+/* Blinking Cursor */
+@keyframes blinkCursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+#dynamic-text::after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1.5rem;
+    margin-left: 5px;
+    background-color: #5f0f40;
+    animation: blinkCursor 0.8s infinite;
+}
+
+/* Static Text */
+#steady-text {
+    font-family: 'Courier New', monospace;
+    font-size: 2.5rem;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #00FFFF;
+}
+
+/* Active Navigation Button */
+.active {
+    background-color: #7b044e;
+    color: white !important;
+    border-color: #5f0f40;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 3px rgba(95, 15, 64, 0.7);
+    transition: all 0.3s ease;
+}
+
+/* Button Styling */
+.tab-btn {
+    background-color: transparent;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Effects */
+.tab-btn:hover {
+    background-color: #5f0f40;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px rgba(95, 15, 64, 0.6);
+}
+
+
+
+.cyber-illustration {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px #00FFFF);
+    }
+    100% {
+        filter: drop-shadow(0 0 15px #FF00FF);
+    }
+}
+
+
+
+
+
+
+.hacker-terminal {
+    font-size: 1rem;
+    line-height: 1.5;
+    background: #0D0221;
+    color: #00FF00;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00FFFF;
+    height: 230px;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.hacker-terminal::after {
+    content: "!";
+    display: inline-block;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+/* Button Border Animation */
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Border thickness */
+    background-color: #ff8fab;
+    transform: translateX(-100%); /* Initially hidden */
+    transition: transform 0.3s ease; /* Smooth border transition */
+}
+
+/* Button Hover Effect */
+.tab-btn:hover::before {
+    transform: translateX(0); /* Slide the border in */
+}
+
+/* Active Tab */
+.tab-btn.active-tab {
+    background-color: #ff8fab;
+}

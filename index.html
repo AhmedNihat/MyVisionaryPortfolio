@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Ullah Nihat | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+</head>
+<body class="text-gray-900" style="background-color: #0D0221;">
+    <!-- Live Clock Positioned on Top-Left -->
+    <div id="clock" class="fixed top-5 left-5 md:left-10 text-[#00FFFF] font-mono text-lg md:text-2xl px-4 py-2 border-2 border-[#00FFFF] rounded-lg shadow-[0_0_10px_#00FFFF,0_0_20px_#7b044e,0_0_30px_#00FFFF] backdrop-blur-md">
+        00:00:00
+    </div>
+
+    <nav class="sticky top-7 py-7 rounded-full max-w-2xl mx-auto animate-cyberfunk relative">
+        <div class="container mx-auto flex justify-center items-center relative">
+            <!-- Mobile Menu Button -->
+            <button id="toggleMenu" class="md:hidden text-xl text-[#FF00FF] absolute top-[-8px] right-6">
+                &#9776;
+            </button>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 border-2 border-[#00FFFF] rounded-full backdrop-blur p-5 shadow-[0_0_10px_#00FFFF,0_0_20px_#7b044e,0_0_30px_#00FFFF]">
+                <li><a href="#home" class="text-[#00FFFF] font-bold hover:text-[#0D0221] hover:bg-[#FF00FF] transition-all duration-300 py-2 px-4 rounded-full border-2 border-[#00FFFF] hover:scale-110 shadow-lg hover:shadow-[#FF00FF]"><i class="fas fa-home mr-2"></i>Home</a></li>
+                <li><a href="#about" class="text-[#00FFFF] font-bold hover:text-[#0D0221] hover:bg-[#FF00FF] transition-all duration-300 py-2 px-4 rounded-full border-2 border-[#00FFFF] hover:scale-110 shadow-lg hover:shadow-[#FF00FF]"><i class="fas fa-user mr-2"></i>About</a></li>
+                <li><a href="#projects" class="text-[#00FFFF] font-bold hover:text-[#0D0221] hover:bg-[#FF00FF] transition-all duration-300 py-2 px-4 rounded-full border-2 border-[#00FFFF] hover:scale-110 shadow-lg hover:shadow-[#FF00FF]"><i class="fas fa-cogs mr-2"></i>Projects</a></li>
+                <li><a href="#contact" class="text-[#00FFFF] font-bold hover:text-[#0D0221] hover:bg-[#FF00FF] transition-all duration-300 py-2 px-4 rounded-full border-2 border-[#00FFFF] hover:scale-110 shadow-lg hover:shadow-[#FF00FF]"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <ul id="menu" class="hidden md:hidden bg-[#0D0221] text-center overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+            <li class="py-2"><a href="#home" class="block text-[#00FFFF] font-bold hover:bg-[#FF00FF] hover:text-[#0D0221] transition-all duration-300 py-3 px-4 rounded-lg">Home</a></li>
+            <li class="py-2"><a href="#about" class="block text-[#00FFFF] font-bold hover:bg-[#FF00FF] hover:text-[#0D0221] transition-all duration-300 py-3 px-4 rounded-lg">About</a></li>
+            <li class="py-2"><a href="#projects" class="block text-[#00FFFF] font-bold hover:bg-[#FF00FF] hover:text-[#0D0221] transition-all duration-300 py-3 px-4 rounded-lg">Projects</a></li>
+            <li class="py-2"><a href="#contact" class="block text-[#00FFFF] font-bold hover:bg-[#FF00FF] hover:text-[#0D0221] transition-all duration-300 py-3 px-4 rounded-lg">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+  <!-- Home Section -->
+<section id="home" class="w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-16 bg-[#0D0221]">
+    <div class="text-center md:text-left space-y-6 max-w-4xl">
+        <!-- Title Section -->
+        <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-mono text-[#00FFFF] mb-3">
+            Hello, It's Me...
+        </h1>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-[#FF00FF] whitespace-nowrap">
+            Ahmed Ullah Nihat
+        </h1>
+
+        <!-- Typing Animation Section (Aligned to one line) -->
+        <div class="text-lg sm:text-xl md:text-2xl text-[#00FFFF] leading-loose font-mono mt-4 flex flex-col md:flex-row items-center md:items-start">
+            <span id="steady-text" class="font-bold text-[#FF00FF] text-xl sm:text-2xl inline-block">I am </span>
+            <span id="dynamic-text" class="text-xl sm:text-2xl inline-block font-bold text-[#00FFFF] pr-2 animate-pop cursor-pointer sm:ml-4 md:ml-4 l leading-relaxed"></span> <!-- Added margin-left for spacing on both mobile and laptop -->
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="mt-12 flex flex-wrap space-x-6 items-center justify-center md:justify-start">
+            <!-- Download CV Button -->
+            <a href="#projects" class="bg-[#FF00FF] text-white py-3 px-8 sm:px-10 rounded-full text-lg sm:text-xl border-4 border-transparent transition-all duration-500 ease-in-out hover:border-[#FF00FF] hover:shadow-lg hover:scale-105 hover:px-12 hover:py-4 hover:bg-gradient-to-r hover:from-[#FF00FF] hover:to-[#8d1c6a] hover:ring-4 hover:ring-[#FF00FF]/50">
+                Download CV
+            </a>
+
+            <!-- GitHub Logo -->
+            <a href="https://github.com/AhmedNihat" target="_blank" class="flex items-center justify-center bg-[#00FFFF] text-black py-3 px-6 sm:px-8 rounded-full text-lg sm:text-xl border-6 border-transparent transition-all duration-500 ease-in-out hover:border-[#00FFFF] hover:shadow-lg hover:scale-105 hover:px-10 hover:py-4 hover:bg-gradient-to-r hover:from-[#00FFFF] hover:to-[#008080] hover:ring-4 hover:ring-[#00FFFF]/50">
+                <i class="fab fa-github text-black text-2xl sm:text-3xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Typing Simulation - Hacker Terminal -->
+    <div class="hacker-terminal bg-black text-green-400 font-mono p-4 rounded-lg shadow-lg border-2 border-[#00FFFF] w-full max-w-md sm:max-w-lg mt-10 md:mt-0 md:ml-16">
+        <div id="hacker-output" class="overflow-hidden h-40"></div>
+    </div>
+</section>
+
+
+
+ <!-- About Section -->
+<section id="about" class="w-full h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto flex items-center space-x-12">
+        <!-- Photo on the Left with Glowing Effect -->
+        <div class="w-1/3 flex justify-center">
+            <img src="/assets/Nihat.png" alt="Your Photo" 
+                class="w-60 h-60 object-cover border-4 border-[#5f0f40] rounded-lg shadow-lg animate-glow">
+        </div>
+
+        <!-- Text & Interactive Tabs -->
+        <div class="w-2/3 flex flex-col justify-center space-y-6">
+            <h2 class="text-4xl font-bold text-[#5f0f40]">About Me</h2>
+            <p class="text-xl text-gray-700 max-w-xl">
+                Hello! I am Ahmed Ullah Nihat, a passionate Data Scientist and Machine Learning enthusiast. 
+                I love solving complex problems and bringing innovative solutions through data.
+            </p>
+
+            <!-- Interactive Tab Buttons -->
+            <div class="flex space-x-4">
+                <button class="tab-btn active-tab" onclick="showTab('education')">Education</button>
+                <button class="tab-btn" onclick="showTab('experience')">Experience</button>
+                <button class="tab-btn" onclick="showTab('skills')">Skills</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="education" class="tab-content active-content">
+                <p class="text-lg text-gray-700">🎓 <b>Bachelor’s in CSE</b> - XYZ University (2021 - 2025)</p>
+                <p class="text-lg text-gray-700">📚 Specialized in Data Science & AI.</p>
+            </div>
+
+            <div id="experience" class="tab-content hidden">
+                <p class="text-lg text-gray-700">💼 <b>Data Science Intern</b> - ABC Company (2024 - Present)</p>
+                <p class="text-lg text-gray-700">🔹 Worked on ML models & data analysis.</p>
+            </div>
+
+            <div id="skills" class="tab-content hidden">
+                <p class="text-lg text-gray-700">🚀 Python, ML, AI, SQL, AWS, React</p>
+                <p class="text-lg text-gray-700">💻 Frontend: HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Contact section -->
+<section id="contact" class="w-full h-screen py-28 px-4 text-center" style="background-color: white;">
+    <h2 class="text-3xl font-bold text-[#5f0f40] mb-4">Contact Me</h2>
+    <p class="text-gray-700 mb-8">Feel free to reach out to me for any inquiries or collaborations.</p>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+            <input type="text" id="name" name="name" required 
+                   class="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-[#5f0f40]">
+        </div>
+
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-[#5f0f40]">
+        </div>
+
+        <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required 
+                      class="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-[#5f0f40]"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-[#5f0f40] text-white py-3 rounded-md text-lg font-bold hover:shadow-lg hover:bg-[#7a174f] transition">
+            Send Message
+        </button>
+    </form>
+
+    <div id="formMessage" class="mt-4 text-green-600 font-bold hidden">Message sent successfully!</div>
+
+    <!-- Social Media Links -->
+    <div class="mt-8">
+        <h3 class="text-xl font-bold text-[#5f0f40] mb-4">Connect with Me:</h3>
+        <div class="flex justify-center space-x-8">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/YourUsername" target="_blank" class="text-3xl text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-3 rounded-full transition-all duration-300">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/YourUsername" target="_blank" class="text-3xl text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-3 rounded-full transition-all duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/YourUsername" target="_blank" class="text-3xl text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-3 rounded-full transition-all duration-300">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- Twitter -->
+            <a href="https://twitter.com/YourUsername" target="_blank" class="text-3xl text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-3 rounded-full transition-all duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+
+  
+    <!-- Contact Information -->
+    <div class="mt-8 text-[#5f0f40]">
+        <p class="text-lg mb-4">Or reach me at:</p>
+        <p class="text-lg font-bold">Email: <a href="mailto:ahmedullahnihat@gmail.com" class="text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-2 rounded-full transition-all duration-300">ahmedullahnihat@gmail.com</a></p>
+        <p class="text-lg font-bold">Phone: <a href="tel:+8801636125691" class="text-[#5f0f40] hover:text-white hover:bg-[#5f0f40] p-2 rounded-full transition-all duration-300">+8801636-125691</a></p>
+    </div>
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
