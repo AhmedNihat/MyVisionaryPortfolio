@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
 
     
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
@@ -137,51 +140,40 @@
         <p class="text-gray-300 mb-6 text-sm md:text-base lg:text-lg text-center">I’d love to hear from you! Let's collaborate and create something incredible.</p>
 
         <!-- Contact Form -->
+       <!-- Contact Form -->
         <form id="contactForm" class="space-y-6 relative z-10 flex flex-col items-center hidden-element-pop">
             <div class="relative w-full">
-                <input type="text" id="name" name="name" required 
-                       class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
-                       placeholder=" ">
-                <label for="name" 
-                       class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Your Name</label>
+                <input type="text" id="name" name="user_name" required
+                    class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
+                    placeholder=" ">
+                <label for="name" class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Your Name</label>
             </div>
-    
+
             <div class="relative w-full">
-                <input type="email" id="email" name="email" required 
-                       class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
-                       placeholder=" ">
-                <label for="email" 
-                       class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Email Address</label>
+                <input type="email" id="email" name="user_email" required
+                    class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
+                    placeholder=" ">
+                <label for="email" class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Email Address</label>
             </div>
-    
+
             <div class="relative w-full">
-                <textarea id="message" name="message" rows="4" required 
-                          class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
-                          placeholder=" "></textarea>
-                <label for="message" 
-                       class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Message</label>
+                <textarea id="message" name="message" rows="4" required
+                        class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
+                        placeholder=" "></textarea>
+                <label for="message" class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Message</label>
             </div>
-    
+
             <button type="submit"
-    class="relative w-40 bg-gradient-to-r from-cyan-500 via-cyan-600 to-pink-500 text-black py-3 px-6 rounded-lg text-lg font-semibold uppercase overflow-hidden transition-all duration-500 transform hover:scale-110 hover:text-white shadow-lg hover:shadow-xl group border-2 border-transparent animate-gradient-border">
-
-    <!-- Liquid Swipe Animation -->
-    <span class="absolute inset-0 bg-gradient-to-r from-cyan-700 via-cyan-600 to-pink-700 opacity-0 transition-all duration-500 transform -translate-x-full scale-150 group-hover:translate-x-0 group-hover:opacity-100"></span>
-
-    <!-- Neon Border Glow -->
-    <span class="absolute inset-0 border-2 border-transparent rounded-lg group-hover:border-cyan-400 group-hover:border-opacity-100 transition-all duration-500 animate-pulse"></span>
-
-    <!-- Send Message Icon with Hover Animation -->
-    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
-        <i class="fas fa-paper-plane text-2xl"></i>
-    </span>
-
-    <!-- Button Text with a futuristic font -->
-    <span class="relative z-10 font-mono text-2xl tracking-wider">Send</span>
-</button>
-
+                    class="relative w-40 bg-gradient-to-r from-cyan-500 via-cyan-600 to-pink-500 text-black py-3 px-6 rounded-lg text-lg font-semibold uppercase overflow-hidden transition-all duration-500 transform hover:scale-110 hover:text-white shadow-lg hover:shadow-xl group border-2 border-transparent animate-gradient-border">
+                <span class="absolute inset-0 bg-gradient-to-r from-cyan-700 via-cyan-600 to-pink-700 opacity-0 transition-all duration-500 transform -translate-x-full scale-150 group-hover:translate-x-0 group-hover:opacity-100"></span>
+                <span class="absolute inset-0 border-2 border-transparent rounded-lg group-hover:border-cyan-400 group-hover:border-opacity-100 transition-all duration-500 animate-pulse"></span>
+                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
+                    <i class="fas fa-paper-plane text-2xl"></i>
+                </span>
+                <span class="relative z-10 font-mono text-2xl tracking-wider">Send</span>
+            </button>
         </form>
-        
+
         <div id="formMessage" class="mt-4 text-green-400 font-bold hidden text-center">Message sent successfully!</div>
 
     </div>

@@ -221,13 +221,46 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents actual form submission
-    document.getElementById("formMessage").classList.remove("hidden"); // Shows success message
-    setTimeout(() => {
-        document.getElementById("formMessage").classList.add("hidden"); // Hides message after 3 sec
-    }, 3000);
-    this.reset(); // Clears form fields
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("mzI5T7Y1OH9nMHf92"); // Initialize EmailJS
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent actual form submission
+
+        // Get form values
+        const form = event.target;
+        const userName = form.user_name.value.trim();
+        const userEmail = form.user_email.value.trim();
+        const message = form.message.value.trim();
+
+        // Check if fields are empty
+        if (!userName || !userEmail || !message) {
+            alert("All fields are required.");
+            return;
+        }
+
+        // Create the templateParams object
+        const templateParams = {
+            user_name: userName,
+            user_email: userEmail,
+            message: message
+        };
+
+        // Send email using EmailJS
+        emailjs.send("Hellworld0404", "template_l8icqik", templateParams)
+            .then(function (response) {
+                console.log("SUCCESS!", response);
+                document.getElementById("formMessage").classList.remove("hidden"); // Show success message
+                setTimeout(() => {
+                    document.getElementById("formMessage").classList.add("hidden"); // Hide message after 3 sec
+                }, 3000);
+                form.reset(); // Clear form fields
+            })
+            .catch(function (error) {
+                console.error("FAILED...", error);
+                alert("Failed to send message. Please try again.");
+            });
+    });
 });
 
 
