@@ -444,3 +444,71 @@ body {
         border-image: linear-gradient(45deg, #FF00FF, #00FFFF, #7b044e) 1;
     }
 }
+
+
+ /* Cyberpunk Colors */
+ .text-neon-blue { color: #00aaff; }
+ .text-neon-pink { color: #ff0077; }
+ .text-neon-purple { color: #8800ff; }
+ .text-neon-cyan { color: #00ffff; }
+
+ /* Cyberpunk Glitch Title */
+ .cyber-glitch {
+     display: inline-block;
+     position: relative;
+     animation: glitch 1.5s infinite alternate;
+ }
+ 
+ @keyframes glitch {
+     0% { text-shadow: 2px 2px rgba(0, 255, 255, 0.7); }
+     50% { text-shadow: -2px -2px rgba(255, 0, 127, 0.7); }
+     100% { text-shadow: 2px -2px rgba(136, 0, 255, 0.7); }
+ }
+
+ /* Cyberpunk Link Design */
+ .cyber-link {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 1.2px;
+     position: relative;
+     padding: 8px 16px;
+     border: 2px solid currentColor;
+     border-radius: 6px;
+     transition: 0.3s ease-in-out;
+     overflow: hidden;
+ }
+
+ .cyber-link::before {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: rgba(255, 255, 255, 0.1);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.3s ease-in-out;
+ }
+
+ .cyber-link:hover::before {
+     transform: scaleX(1);
+ }
+
+ .cyber-icon {
+     font-size: 1.5rem;
+     transition: transform 0.3s ease-in-out;
+ }
+
+ .cyber-link:hover .cyber-icon {
+     transform: rotate(10deg) scale(1.1);
+ }
+
+ .cyber-text {
+     transition: opacity 0.3s ease-in-out;
+ }
+
+ .cyber-link:hover .cyber-text {
+     opacity: 0.8;
+ }

@@ -60,6 +60,10 @@ window.onload = function () {
     handleActiveLink(); // Update active link when the page loads
 };
 
+
+
+
+
 // Typewriter effect for dynamic text with cyberpunk colors
 const textArray = [
     { text: "Data Scientist", color: "#00FFFF" },  // Neon Cyan
@@ -141,36 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".animate-fade-in-up, .animate-slide-in, .animate-typing, .animate-pop, .animate-bounce-on-load");
-
-    // Handle scroll animations
-    function handleScrollAnimations() {
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-
-            // Check if the element is inside the viewport (adjust offset as needed)
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                element.classList.add("visible"); // Add the 'visible' class to trigger animation
-            } else {
-                element.classList.remove("visible"); // Remove the 'visible' class when it's out of view
-            }
-        });
-    }
-
-    // Trigger scroll animations when user scrolls
-    window.addEventListener("scroll", handleScrollAnimations);
-
-    // Initially, don't trigger animations on page load
-    // Only start when the user scrolls for the first time
-    let firstScroll = true;
-    window.addEventListener('scroll', function () {
-        if (firstScroll) {
-            handleScrollAnimations(); // Trigger animations on the first scroll event
-            firstScroll = false;
-        }
-    });
-});
 
 
 // Tab navigation (Show the selected tab)
