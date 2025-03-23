@@ -1,22 +1,169 @@
+/* ========== Global Styling ========== */
 body {
-    transition: background 0.5s ease;
+
     font-family: 'Fira Code', monospace;
+    background-color: #0D0221;
+    color: #00FFFF;
 }
 
+
+
+  .nav-link {
+        color: #00FFFF;
+        font-weight: bold;
+        padding: 8px 16px;
+        border: 2px solid #00FFFF;
+        border-radius: 9999px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-link:hover {
+        background: #FF00FF;
+        color: #0D0221;
+        transform: scale(1.05);
+        box-shadow: 0 0 10px #FF00FF;
+    }
+    .menu-item {
+        padding: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .menu-item a {
+        display: block;
+        color: #00FFFF;
+        font-weight: bold;
+        padding: 12px 20px;
+        transition: all 0.3s ease-in-out;
+        text-transform: uppercase;
+    }
+    .menu-item a:hover {
+        background: #FF00FF;
+        color: #0D0221;
+        border-radius: 9999px;
+    }
+
+
+
+/* Gradient Animation Effect for Name */
+@keyframes gradientTextAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Apply gradient effect to text */
+.gradient-text {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF, #7b044e);
+    background-size: 300% 300%;
+    color: transparent; /* Text color is transparent to reveal the gradient */
+    -webkit-background-clip: text; /* For Chrome/Safari */
+    background-clip: text; /* For Firefox */
+    animation: gradientTextAnimation 3s infinite linear;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in-up {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-in {
+    animation: slideInUp 1s ease-out;
+}
+
+.animate-bounce-on-load {
+    animation: bounceIn 1s ease-out;
+}
+
+.animate-fade-in-left {
+    animation: fadeIn 1s ease-in-left;
+}
+
+/* ========== Hacker Terminal Effects ========== */
+.hacker-terminal {
+    background: black;
+    color: #00ff00;
+    font-family: 'Fira Code', monospace;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 15px #00FFFF;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ========== Flickering Text Animation ========== */
 @keyframes flicker {
-    0% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #7b044e; }
-    50% { opacity: 0.8; text-shadow: 0 0 3px #00FFFF, 0 0 8px #7b044e; }
-    100% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #7b044e; }
+    0% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; }
+    50% { opacity: 0.8; text-shadow: 0 0 3px #00FFFF, 0 0 8px #00FFFF; }
+    100% { opacity: 1; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; }
 }
 
-#clock {
-    animation: flicker 1.5s infinite alternate;
+.cyberpunk-text {
+    animation: flicker 1.5s infinite alternate ease-in-out;
 }
 
+/* ========== Glitch Animation (Random Shaking Text) ========== */
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 0); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
 
+.glitch-text {
+    animation: glitch 0.2s infinite;
+}
 
+/* ========== Terminal Typing Effect ========== */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
 
-/* Cyberpunk Animation */
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(30, end) forwards;
+}
+
+/* ========== Cyberpunk Glow Effect ========== */
+.cyberpunk-effect {
+    text-shadow: 0 0 8px #00FFFF, 0 0 12px #FF00FF;
+}
+
+/* ========== Button Hover Effects ========== */
+.tab-btn {
+    transition: all 0.3s ease-in-out;
+}
+.tab-btn:hover {
+    transform: scale(1.05);
+    color: #FF00FF;
+}
+
+/* Cyberpunk animation with glowing text */
 @keyframes cyberfunkAnimation {
     0% {
         opacity: 0;
@@ -43,7 +190,20 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-/* Text Pop Animation */
+/* Text Flickering Effect */
+@keyframes text-flicker {
+    0% { opacity: 1; }
+    25% { opacity: 0.7; }
+    50% { opacity: 0.5; }
+    75% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.cyberpunk-text {
+    animation: text-flicker 1.5s infinite alternate ease-in-out;
+}
+
+/* Dynamic text pop animation */
 @keyframes textPop {
     0% {
         opacity: 0;
@@ -55,7 +215,6 @@ body {
     }
 }
 
-/* Dynamic Text Animation */
 #dynamic-text {
     animation: textPop 0.5s ease forwards;
     display: inline-block;
@@ -69,7 +228,7 @@ body {
     padding-right: 10px;
 }
 
-/* Blinking Cursor */
+/* Blinking cursor */
 @keyframes blinkCursor {
     50% {
         opacity: 0;
@@ -86,7 +245,7 @@ body {
     animation: blinkCursor 0.8s infinite;
 }
 
-/* Static Text */
+/* Static text */
 #steady-text {
     font-family: 'Courier New', monospace;
     font-size: 2.5rem;
@@ -95,7 +254,7 @@ body {
     color: #00FFFF;
 }
 
-/* Active Navigation Button */
+/* Active navigation button effect */
 .active {
     background-color: #7b044e;
     color: white !important;
@@ -105,30 +264,72 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Button Styling */
+/* Tab button styling */
 .tab-btn {
     background-color: transparent;
-    color: black;
-    padding: 10px 20px;
+    color: #00FFFF; /* Neon Cyan */
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
     font-size: 1.2rem;
+    display: inline-block;
     position: relative;
     overflow: hidden;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Button Hover Effects */
+/* Underline border animation for buttons */
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF00FF, #00FFFF); /* Magenta to Cyan gradient */
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* Hover effect */
 .tab-btn:hover {
-    background-color: #5f0f40;
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px 2px rgba(95, 15, 64, 0.6);
+    transform: scale(1.05);
+    color: #FF00FF; /* Neon Magenta */
 }
 
+/* Expand the underline from center */
+.tab-btn:hover::after {
+    width: 100%;
+    left: 0;
+}
 
+/* Active tab styling */
+.tab-btn.active-tab {
+    color: #FF00FF; /* Magenta */
+    transform: scale(1.1);
+    text-shadow: 0 0 8px #FF00FF, 0 0 15px #00FFFF; /* Neon Glow */
+    position: relative;
+}
 
+/* Active tab underline effect */
+.tab-btn.active-tab::after {
+    width: 100%;
+    left: 0;
+    background: linear-gradient(90deg, #FF00FF, #00FFFF); /* Cyberpunk Glow */
+    box-shadow: 0 0 10px #FF00FF, 0 0 15px #00FFFF; /* Soft glow around underline */
+}
+
+/* Subtle pulsating glow effect on active tab */
+@keyframes pulse-glow {
+    0% { text-shadow: 0 0 8px #FF00FF, 0 0 15px #00FFFF; }
+    50% { text-shadow: 0 0 15px #FF00FF, 0 0 25px #00FFFF; }
+    100% { text-shadow: 0 0 8px #FF00FF, 0 0 15px #00FFFF; }
+}
+
+.tab-btn.active-tab {
+    animation: pulse-glow 1.5s infinite alternate;
+}
+
+/* Cyberpunk illustration animation */
 .cyber-illustration {
     position: absolute;
     top: 50%;
@@ -146,11 +347,7 @@ body {
     }
 }
 
-
-
-
-
-
+/* Hacker terminal styling */
 .hacker-terminal {
     font-size: 1rem;
     line-height: 1.5;
@@ -176,28 +373,74 @@ body {
     100% { opacity: 1; }
 }
 
+/* Flip card container with animated border */
+.flip-card {
+    background-color: transparent;
+    width: 240px;
+    height: 240px;
+    perspective: 1000px; /* Enables 3D effect */
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: border-box;
+    animation: gradientMove 3s infinite linear; /* Gradient border animation */
+}
 
-
-
-/* Button Border Animation */
-.tab-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Flip card inner container */
+.flip-card-inner {
+    position: relative;
     width: 100%;
-    height: 4px; /* Border thickness */
-    background-color: #ff8fab;
-    transform: translateX(-100%); /* Initially hidden */
-    transition: transform 0.3s ease; /* Smooth border transition */
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
 }
 
-/* Button Hover Effect */
-.tab-btn:hover::before {
-    transform: translateX(0); /* Slide the border in */
+/* Flip card faces */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Active Tab */
-.tab-btn.active-tab {
-    background-color: #ff8fab;
+/* Front face styling */
+.flip-card-front {
+    background: transparent; /* Ensures transparency */
+}
+
+/* Back face styling */
+.flip-card-back {
+    background: transparent; /* Ensures transparency */
+    transform: rotateY(180deg);
+}
+
+/* Profile photo styling */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures full visibility */
+    border-radius: 8px;
+    background: transparent; /* Ensures no background color */
+}
+
+/* Moving gradient animation */
+@keyframes gradientMove {
+    0% {
+        border-image: linear-gradient(45deg, #FF00FF, #00FFFF, #7b044e) 1;
+    }
+    25% {
+        border-image: linear-gradient(90deg, #FF00FF, #00FFFF, #7b044e) 1;
+    }
+    50% {
+        border-image: linear-gradient(135deg, #FF00FF, #00FFFF, #7b044e) 1;
+    }
+    75% {
+        border-image: linear-gradient(180deg, #FF00FF, #00FFFF, #7b044e) 1;
+    }
+    100% {
+        border-image: linear-gradient(45deg, #FF00FF, #00FFFF, #7b044e) 1;
+    }
 }

@@ -1,40 +1,37 @@
 // Toggle Menu (for mobile view)
-const toggleMenu = document.getElementById('toggleMenu');
-const menu = document.getElementById('menu');
+document.getElementById("toggleMenu").addEventListener("click", function() {
+    let menu = document.getElementById("menu");
+    let menuIcon = document.getElementById("menuIcon");
 
-toggleMenu.addEventListener('click', () => {
-    // Toggle visibility of mobile menu
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('max-h-0');  // Hide menu initially with max-height 0
-    menu.classList.toggle('max-h-screen'); // Set max-height to screen size when menu is visible
-
-    // Toggle hamburger and close icon
-    if (menu.classList.contains('max-h-screen')) {
-        toggleMenu.innerHTML = '&#10006;';  // Close icon
+    if (menu.classList.contains("translate-x-full")) {
+        menu.classList.remove("translate-x-full", "opacity-0");
+        menu.classList.add("translate-x-0", "opacity-100");
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times"); // Animate to 'X'
     } else {
-        toggleMenu.innerHTML = '&#9776;';  // Hamburger icon
+        menu.classList.remove("translate-x-0", "opacity-100");
+        menu.classList.add("translate-x-full", "opacity-0");
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars"); // Animate back to '☰'
     }
 });
 
-// Live Clock Function
-function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", function() {
+        let menu = document.getElementById("menu");
+        let menuIcon = document.getElementById("menuIcon");
+        menu.classList.remove("translate-x-0", "opacity-100");
+        menu.classList.add("translate-x-full", "opacity-0");
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+    });
+});
 
-    document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
-}
-
-// Update the clock every second
-setInterval(updateClock, 1000);
-updateClock(); // Call initially
-
-// Active Link Highlighting
+// Active Link Highlighting (scroll-based)
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav ul li a");
 
-// Function to handle active link change (Scroll-Based)
+// Function to handle active link change
 function handleActiveLink() {
     let currentSection = "";
 
@@ -49,39 +46,36 @@ function handleActiveLink() {
 
     navLinks.forEach(link => {
         link.classList.remove("active"); // Remove active from all
-
         if (link.getAttribute("href").substring(1) === currentSection) {
-            link.classList.add("active"); // Add active to the current section
+            link.classList.add("active"); // Add active to current section
         }
     });
 }
-
-// ✅ Manually update active link when clicked
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        navLinks.forEach(nav => nav.classList.remove("active")); // Remove active from all
-        this.classList.add("active"); // Add active to clicked link
-    });
-});
 
 // Event listener to trigger on scroll
 window.addEventListener("scroll", handleActiveLink);
 
 // Ensure active link is updated on page load
 window.onload = function () {
-    typeWriter(); // Start typing effect
     handleActiveLink(); // Update active link when the page loads
 };
 
-// Typewriter effect
-const text = ["Data Scientist", "ML Specialist", "Tech Enthusiast"];
+// Typewriter effect for dynamic text with cyberpunk colors
+const textArray = [
+    { text: "Data Scientist", color: "#00FFFF" },  // Neon Cyan
+    { text: "ML Specialist", color: "#FF00FF" },  // Neon Magenta
+    { text: "Tech Enthusiast", color: "#FFFF00" } // Neon Yellow
+];
+
 let index = 0;
 let i = 0;
 let speed = 100;
 
 function typeWriter() {
-    if (i < text[index].length) {
-        document.getElementById("dynamic-text").innerHTML += text[index].charAt(i);
+    if (i < textArray[index].text.length) {
+        const dynamicText = document.getElementById("dynamic-text");
+        dynamicText.innerHTML += textArray[index].text.charAt(i);
+        dynamicText.style.color = textArray[index].color; // Apply cyberpunk color
         i++;
         setTimeout(typeWriter, speed);
     } else {
@@ -91,29 +85,30 @@ function typeWriter() {
 
 function eraseText() {
     if (i >= 0) {
-        document.getElementById("dynamic-text").innerHTML = text[index].substring(0, i);
+        const dynamicText = document.getElementById("dynamic-text");
+        dynamicText.innerHTML = textArray[index].text.substring(0, i);
         i--;
         setTimeout(eraseText, 50);
     } else {
-        index = (index + 1) % text.length;
+        index = (index + 1) % textArray.length;
         setTimeout(typeWriter, 500);
     }
 }
 
-// Terminal-like log output
+// Start the typing effect when the page loads
+document.addEventListener("DOMContentLoaded", typeWriter);
+
+// Logs with typewriter effect (Hacker-like output)
 document.addEventListener("DOMContentLoaded", function () {
     const outputDiv = document.getElementById("hacker-output");
     const logs = [
-        "[AI-System] Initializing neural network...",
-        "[AI-Model] Training epoch 12/50...",
-        "[Security] Intrusion detected - running countermeasures...",
-        "[Server] GPU acceleration enabled...",
-        "[NLP] Sentiment analysis completed...",
-        "[ML-Pipeline] Data preprocessing  ✅",
-        "[Deep Learning] Backpropagation in progress...",
-        "[Encryption] AES-256 encryption successful...",
-        "[Database] Query executed in 0.032s",
-        "[AI] Self-learning module activated..."
+        "Initializing system...",
+        "Loading modules...",
+        "Fetching data...",
+        "Access granted.",
+        "....",
+        "Welcome to Ahmed Ullah Nihat's Data World!",
+        "!!!"
     ];
 
     function typeLog(log) {
@@ -144,8 +139,42 @@ document.addEventListener("DOMContentLoaded", function () {
     startTyping();
 });
 
-// Tabs Functionality
-function showTab(tabId) {
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-fade-in-up, .animate-slide-in, .animate-typing, .animate-pop, .animate-bounce-on-load");
+
+    // Handle scroll animations
+    function handleScrollAnimations() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+
+            // Check if the element is inside the viewport (adjust offset as needed)
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add("visible"); // Add the 'visible' class to trigger animation
+            } else {
+                element.classList.remove("visible"); // Remove the 'visible' class when it's out of view
+            }
+        });
+    }
+
+    // Trigger scroll animations when user scrolls
+    window.addEventListener("scroll", handleScrollAnimations);
+
+    // Initially, don't trigger animations on page load
+    // Only start when the user scrolls for the first time
+    let firstScroll = true;
+    window.addEventListener('scroll', function () {
+        if (firstScroll) {
+            handleScrollAnimations(); // Trigger animations on the first scroll event
+            firstScroll = false;
+        }
+    });
+});
+
+
+// Tab navigation (Show the selected tab)
+function showTab(tabId, event) {
     // Hide all tab content
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.add('hidden');
@@ -165,5 +194,64 @@ function showTab(tabId) {
 
 // Show Education tab by default
 document.addEventListener("DOMContentLoaded", () => {
+    // Show Education tab by default
     showTab('education');
+});
+
+// Listen for tab clicks to set active class
+document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll(".tab-btn");
+
+    tabButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Remove active-tab class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove("active-tab"));
+            
+            // Add active-tab class to the clicked button
+            this.classList.add("active-tab");
+        });
+    });
+});
+
+// Automatic image flipping for the card
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        '/assets/Nihat1.png',
+        '/assets/Nihat2.png'
+    ];
+
+    let currentIndex = 0;
+    const flipCardInner = document.getElementById('flip-card-inner');
+    const frontImage = flipCardInner.querySelector('.flip-card-front img');
+    const backImage = flipCardInner.querySelector('.flip-card-back img');
+
+    function flipImage() {
+        const nextIndex = (currentIndex + 1) % images.length;
+
+        // Update back image source before flipping
+        backImage.src = images[nextIndex];
+
+        // Apply flip animation
+        flipCardInner.style.transform = 'rotateY(180deg)';
+
+        // After animation, swap front image and reset flip
+        setTimeout(() => {
+            frontImage.src = images[nextIndex];
+            flipCardInner.style.transform = 'rotateY(0deg)';
+            currentIndex = nextIndex;
+        }, 800); // Match with CSS transition
+    }
+
+    // Automatically flip image every 3 seconds
+    setInterval(flipImage, 3000);
+});
+
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents actual form submission
+    document.getElementById("formMessage").classList.remove("hidden"); // Shows success message
+    setTimeout(() => {
+        document.getElementById("formMessage").classList.add("hidden"); // Hides message after 3 sec
+    }, 3000);
+    this.reset(); // Clears form fields
 });
