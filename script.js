@@ -229,3 +229,70 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     }, 3000);
     this.reset(); // Clears form fields
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const verticalElements = document.querySelectorAll(".hidden-element-vertical");
+    const horizontalElements = document.querySelectorAll(".hidden-element-horizontal");
+    const rtlElements = document.querySelectorAll(".hidden-element-rtl");
+    const flipElements = document.querySelectorAll(".hidden-element-flip");
+    const popElements = document.querySelectorAll(".hidden-element-pop");  // Select pop elements
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains("hidden-element-vertical")) {
+                        entry.target.classList.add("show-element-vertical");
+                    }
+                    if (entry.target.classList.contains("hidden-element-horizontal")) {
+                        entry.target.classList.add("show-element-horizontal");
+                    }
+                    if (entry.target.classList.contains("hidden-element-rtl")) {
+                        entry.target.classList.add("show-element-rtl");
+                    }
+                    if (entry.target.classList.contains("hidden-element-flip")) {
+                        entry.target.classList.add("show-element-flip");
+                    }
+                    if (entry.target.classList.contains("hidden-element-pop")) {
+                        entry.target.classList.add("show-element-pop");
+                    }
+                } else {
+                    if (entry.target.classList.contains("hidden-element-vertical")) {
+                        entry.target.classList.remove("show-element-vertical");
+                    }
+                    if (entry.target.classList.contains("hidden-element-horizontal")) {
+                        entry.target.classList.remove("show-element-horizontal");
+                    }
+                    if (entry.target.classList.contains("hidden-element-rtl")) {
+                        entry.target.classList.remove("show-element-rtl");
+                    }
+                    if (entry.target.classList.contains("hidden-element-flip")) {
+                        entry.target.classList.remove("show-element-flip");
+                    }
+                    if (entry.target.classList.contains("hidden-element-pop")) {
+                        entry.target.classList.remove("show-element-pop");
+                    }
+                }
+            });
+        },
+        { threshold: 0.2 } // Trigger when 20% of the element is visible
+    );
+
+    verticalElements.forEach((element) => {
+        observer.observe(element); // Observe vertical elements
+    });
+    horizontalElements.forEach((element) => {
+        observer.observe(element); // Observe horizontal elements
+    });
+    rtlElements.forEach((element) => {
+        observer.observe(element); // Observe right-to-left elements
+    });
+    flipElements.forEach((element) => {
+        observer.observe(element); // Observe flip elements
+    });
+    popElements.forEach((element) => {
+        observer.observe(element); // Observe pop elements
+    });
+});
+

@@ -512,3 +512,71 @@ body {
  .cyber-link:hover .cyber-text {
      opacity: 0.8;
  }
+
+
+
+
+
+
+
+ /* Vertical Slide-In Effect */
+.hidden-element-vertical {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show-element-vertical {
+    opacity: 1;
+    transform: translateY(0); /* Slide to normal position */
+}
+
+/* Left-to-Right Slide-In Effect */
+.hidden-element-horizontal {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show-element-horizontal {
+    opacity: 1;
+    transform: translateX(0); /* Slide to normal position */
+}
+
+/* Right-to-Left Slide-In Effect */
+.hidden-element-rtl {
+    opacity: 0;
+    transform: translateX(100px); /* Start from the right */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show-element-rtl {
+    opacity: 1;
+    transform: translateX(0); /* Slide to normal position */
+}
+
+/* Initial state: element starts off the screen, rotated, and invisible */
+.hidden-element-flip {
+    opacity: 0;
+    transform: rotateY(-180deg) translateX(-200px); /* Start with a 180-degree rotation and move to the left */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* State when the element comes into view */
+.show-element-flip {
+    opacity: 1;
+    transform: rotateY(0deg) translateX(0); /* Flip back and slide to normal position */
+}
+
+/* Initial state: element starts off invisible and scaled down */
+.hidden-element-pop {
+    opacity: 0;
+    transform: scale(0); /* Start smaller */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* State when the element comes into view */
+.show-element-pop {
+    opacity: 1;
+    transform: scale(1); /* Pop into normal size */
+}

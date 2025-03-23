@@ -49,7 +49,7 @@
 
     <div class="text-center md:text-left space-y-6 max-w-4xl animate-fade-in-up">
         <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-mono text-[#00FFFF] mb-3 animate-slide-in">Hello, It's Me...</h1>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold gradient-text animate-pop">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold gradient-text animate-pop hidden-element-horizontal">
             Ahmed Ullah Nihat
         </h1>
         
@@ -59,13 +59,13 @@
             <span id="dynamic-text" class="text-xl sm:text-2xl inline-block font-bold text-[#00FFFF] pr-2 animate-typing cursor-pointer sm:ml-4 md:ml-4 leading-relaxed"></span>
         </div>
         <div class="mt-8 flex flex-wrap space-x-6 items-center justify-center md:justify-start">
-            <a href="#projects" class="bg-[#FF00FF] text-black py-2 px-6 sm:px-8 rounded-full text-md sm:text-lg border-4 border-transparent transition-all duration-500 ease-in-out hover:border-[#FF00FF] hover:shadow-lg hover:scale-105 hover:px-8 hover:py-3 hover:bg-gradient-to-r hover:from-[#FF00FF] hover:to-[#8d1c6a] hover:ring-4 hover:ring-[#FF00FF]/50">Download CV</a>
-            <a href="https://github.com/AhmedNihat" target="_blank" class="flex items-center justify-center bg-[#00FFFF] text-black py-2 px-6 sm:px-8 rounded-full text-md sm:text-lg border-6 border-transparent transition-all duration-500 ease-in-out hover:border-[#00FFFF] hover:shadow-lg hover:scale-105 hover:px-8 hover:py-3 hover:bg-gradient-to-r hover:from-[#00FFFF] hover:to-[#008080] hover:ring-4 hover:ring-[#00FFFF]/50">
+            <a href="#projects" class="bg-[#FF00FF] text-black py-2 px-6 sm:px-8 rounded-full text-md sm:text-lg border-4 border-transparent transition-all duration-500 ease-in-out hover:border-[#FF00FF] hover:shadow-lg hover:scale-105 hover:px-8 hover:py-3 hover:bg-gradient-to-r hover:from-[#FF00FF] hover:to-[#8d1c6a] hover:ring-4 hover:ring-[#FF00FF]/50 hidden-element-pop">Download CV</a>
+            <a href="https://github.com/AhmedNihat" target="_blank" class="flex items-center justify-center bg-[#00FFFF] text-black py-2 px-6 sm:px-8 rounded-full text-md sm:text-lg border-6 border-transparent transition-all duration-500 ease-in-out hover:border-[#00FFFF] hover:shadow-lg hover:scale-105 hover:px-8 hover:py-3 hover:bg-gradient-to-r hover:from-[#00FFFF] hover:to-[#008080] hover:ring-4 hover:ring-[#00FFFF]/50 hidden-element-pop">
                 <i class="fab fa-github text-black text-xl sm:text-2xl"></i>
             </a>
         </div>
     </div>
-    <div class="hacker-terminal bg-black text-green-400 font-mono rounded-xl border-4 border-cyan-400 shadow-[0_0_10px_#0ff] w-full max-w-md sm:max-w-lg mt-8 md:mt-0 md:ml-16 cyberpunk-effect animate-fade-in-up relative sm:pt-0">
+    <div class="hacker-terminal bg-black text-green-400 font-mono rounded-xl border-4 border-cyan-400 shadow-[0_0_10px_#0ff] w-full max-w-md sm:max-w-lg mt-8 md:mt-0 md:ml-16 cyberpunk-effect animate-fade-in-up relative sm:pt-0  hidden-element-rtl">
         <div id="hacker-output" class="overflow-hidden h-40 flex items-start cyberpunk-text p-2"></div>
     </div>
 
@@ -73,10 +73,10 @@
 
 
 <!-- About Section -->
-<section id="about" class="animate-fade-in-left w-full min-h-screen flex flex-col md:flex-row items-center justify-start md:justify-center px-4 md:px-16 py-8 md:py-16 bg-[#0D0221]">
+<section id="about" class="w-full min-h-screen flex flex-col md:flex-row items-center justify-start md:justify-center px-4 md:px-16 py-8 md:py-16 bg-[#0D0221]">
   <!-- Flip Card Container -->
-  <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 animate-fade-in-up">
-      <div class="flip-card">
+  <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
+      <div class="flip-card hidden-element-horizontal">
           <div class="flip-card-inner" id="flip-card-inner">
               <!-- Front Side -->
               <div class="flip-card-front">
@@ -87,7 +87,7 @@
               <!-- Back Side -->
               <div class="flip-card-back">
                   <div class="image-border">
-                      <img src="/assets/Nihat2.png" alt="Profile Photo" class="profile-photo">
+                      <img src="/Nihat2.png" alt="Profile Photo" class="profile-photo">
                   </div>
               </div>
           </div>
@@ -96,31 +96,31 @@
 
   <!-- Text & Interactive Tabs -->
   <div class="w-full md:w-2/3 flex flex-col justify-center space-y-6 px-4 animate-fade-in-up">
-      <h2 class=" text-4xl font-bold text-[#FF00FF] glow-text text-center md:text-left">About Me</h2>
-      <p class="text-[#00FFFF] max-w-xl text-center md:text-left">
+      <h2 class=" text-4xl font-bold text-[#FF00FF] glow-text text-center md:text-left hidden-element-vertical">About Me</h2>
+      <p class="text-[#00FFFF] max-w-xl text-center md:text-left hidden-element-vertical">
           Hello! I am Ahmed Ullah Nihat, a passionate Data Scientist and Machine Learning enthusiast. 
           I love solving complex problems and bringing innovative solutions through data.
       </p>
   
       <!-- Interactive Tab Buttons -->
-      <div class="flex justify-center md:justify-start space-x-4">
+      <div class="flex justify-center md:justify-start space-x-4 hidden-element-vertical">
           <button class="tab-btn active-tab" onclick="showTab('education')">Education</button>
           <button class="tab-btn" onclick="showTab('experience')">Experience</button>
           <button class="tab-btn" onclick="showTab('skills')">Skills</button>
       </div>
   
       <!-- Tab Content -->
-      <div id="education" class="tab-content active-content">
+      <div id="education" class="tab-content active-content hidden-element-horizontal">
           <p class="text-lg text-[#00FFFF]">=> <b>Bachelors of Science (BSc)</b> - Premier University Chattogram</p>
           <p class="text-lg text-[#00FFFF]"> ⚫ BSc In CSE (2020-2026).</p>
       </div>
   
-      <div id="experience" class="tab-content hidden">
+      <div id="experience" class="tab-content hidden hidden-element-horizontal">
           <p class="text-lg text-[#00FFFF]">💼 <b>Data Science Intern</b> - ABC Company (2024 - Present)</p>
           <p class="text-lg text-[#00FFFF]">🔹 Worked on ML models & data analysis.</p>
       </div>
   
-      <div id="skills" class="tab-content hidden">
+      <div id="skills" class="tab-content hidden hidden-element-horizontal">
           <p class="text-lg text-[#00FFFF]">🚀 Python, ML, AI, SQL, AWS, React</p>
           <p class="text-lg text-[#00FFFF]">💻 Frontend: HTML, CSS, JavaScript</p>
       </div>
@@ -133,11 +133,11 @@
     <div class="w-full max-w-lg md:max-w-xl lg:max-w-2xl p-6 md:p-8 bg-black bg-opacity-80 backdrop-blur-lg rounded-xl shadow-xl border border-cyan-400 relative overflow-hidden mb-12 mt-12">
         <div class="absolute inset-0 bg-cyan-500 opacity-10 blur-3xl"></div>
         
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-cyan-400 mb-6 tracking-wide uppercase animate-pulse text-center">Get in Touch</h2>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-cyan-400 mb-6 tracking-wide uppercase animate-pulse text-center hidden-element-flip">Get in Touch</h2>
         <p class="text-gray-300 mb-6 text-sm md:text-base lg:text-lg text-center">I’d love to hear from you! Let's collaborate and create something incredible.</p>
 
         <!-- Contact Form -->
-        <form id="contactForm" class="space-y-6 relative z-10 flex flex-col items-center">
+        <form id="contactForm" class="space-y-6 relative z-10 flex flex-col items-center hidden-element-pop">
             <div class="relative w-full">
                 <input type="text" id="name" name="name" required 
                        class="w-full p-3 pt-6 bg-black border border-cyan-400 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-300 shadow-lg hover:shadow-cyan-400 peer"
@@ -162,27 +162,24 @@
                        class="absolute left-3 top-4 text-cyan-400 text-sm transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-cyan-300">Message</label>
             </div>
     
-            <button type="submit" 
-                class="relative w-40 bg-gradient-to-r from-cyan-500 via-cyan-600 to-pink-500 text-black py-2 rounded-lg text-lg font-semibold uppercase overflow-hidden 
-                       transition-all duration-500 transform hover:scale-110 hover:text-white shadow-lg hover:shadow-xl group border-2 border-transparent animate-gradient-border">
-    
-                <!-- Liquid Swipe Animation -->
-                <span class="absolute inset-0 bg-gradient-to-r from-cyan-700 via-cyan-600 to-pink-700  opacity-0 
-                              transition-all duration-500 transform -translate-x-full scale-150 group-hover:translate-x-0 group-hover:opacity-100"></span>
-    
-                
-                <!-- Neon Border Glow -->
-               <span class="absolute inset-0 border-2 border-transparent rounded-lg group-hover:border-cyan-400 transition-all duration-500 animate-pulse"></span>
+            <button type="submit"
+    class="relative w-40 bg-gradient-to-r from-cyan-500 via-cyan-600 to-pink-500 text-black py-3 px-6 rounded-lg text-lg font-semibold uppercase overflow-hidden transition-all duration-500 transform hover:scale-110 hover:text-white shadow-lg hover:shadow-xl group border-2 border-transparent animate-gradient-border">
 
-    
-                <!-- Send Message Icon with Hover Animation -->
-                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
-                    <i class="fas fa-paper-plane text-2xl"></i>
-                </span>
-    
-                <!-- Button Text with a futuristic font -->
-                <span class="relative z-10 font-mono text-2xl tracking-wider">Send</span>
-            </button>
+    <!-- Liquid Swipe Animation -->
+    <span class="absolute inset-0 bg-gradient-to-r from-cyan-700 via-cyan-600 to-pink-700 opacity-0 transition-all duration-500 transform -translate-x-full scale-150 group-hover:translate-x-0 group-hover:opacity-100"></span>
+
+    <!-- Neon Border Glow -->
+    <span class="absolute inset-0 border-2 border-transparent rounded-lg group-hover:border-cyan-400 group-hover:border-opacity-100 transition-all duration-500 animate-pulse"></span>
+
+    <!-- Send Message Icon with Hover Animation -->
+    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
+        <i class="fas fa-paper-plane text-2xl"></i>
+    </span>
+
+    <!-- Button Text with a futuristic font -->
+    <span class="relative z-10 font-mono text-2xl tracking-wider">Send</span>
+</button>
+
         </form>
         
         <div id="formMessage" class="mt-4 text-green-400 font-bold hidden text-center">Message sent successfully!</div>
@@ -193,8 +190,8 @@
 
 <!-- Social Media Links - Cyberpunk Theme -->
 <div class="w-full text-center mb-8">
-    <p class="text-cyan-300 font-semibold mb-4 text-xl tracking-widest cyber-glitch">CONNECT WITH ME</p>
-    <div class="flex flex-wrap justify-center gap-6">
+    <p class="text-cyan-300 font-semibold mb-4 text-xl tracking-widest cyber-glitch hidden-element-horizontal">CONNECT WITH ME</p>
+    <div class="flex flex-wrap justify-center gap-6 hidden-element-pop">
         <a href="#" class="cyber-link text-neon-blue group">
             <span class="cyber-icon"><i class="fab fa-facebook"></i></span>
             <span class="cyber-text">Facebook</span>
